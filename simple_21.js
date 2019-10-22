@@ -180,7 +180,7 @@ const updateCpuScore = (scoreArr) => {
     checkCpuScore()
     displayCpuScore()
     removeButtons()
-}
+ }
 
 const checkCpuScore = (sum) => {
     if (sum > 21) {
@@ -193,7 +193,7 @@ const checkCpuScore = (sum) => {
 const displayCpuScore = (sum) => {
     let score = document.querySelector("#cpuScore")
     score.innerText = sum 
-}
+ }
 
 const compareScores = (sum1, sum2) => {
     let userdiff = 21 - sum1 
@@ -201,9 +201,20 @@ const compareScores = (sum1, sum2) => {
     if (userdiff < cpudiff){
       displayYouWon()
     } else {
-      console.log('computer won!')
+      displayCpuWon()
     }
  }
+
+ const displayCpuWon = () => {
+    let header = document.querySelector("#header")
+  
+    let cpuWonText = document.createElement('h1')
+    cpuWonText.innerText = 'COMPUTER WINS!'
+  
+    header.append(cpuWonText)
+  }
+
+
   
 
 
