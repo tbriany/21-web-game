@@ -3,3 +3,10 @@ html {
     background: url("https://render.fineartamerica.com/images/rendered/default/print/8.000/5.375/break/images-medium-5/poker-background-chips-and-cards-on-green-table-tedestudio.jpg") no-repeat center center fixed;
     background-size: cover;
 }
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    color: white; 
+   margin-bottom: 75px;
+}
