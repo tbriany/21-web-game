@@ -95,6 +95,7 @@ const updateUserScore = (scoreArr) => {
       removeButtons()
     } else if (sum > 21) {
      console.log("User lost")
+     displayBusted()
     }
   }
 
@@ -110,4 +111,16 @@ const updateUserScore = (scoreArr) => {
   
     footer.removeChild(hitBtn)
     footer.removeChild(stayBtn)
+  }
+
+  const displayBusted = () => {
+    let userDiv = document.querySelector("#userDeck")
+  
+    let busted = document.createElement('h2')
+    busted.innerText = "BUSTED !"
+  
+   let gameDiv = document.querySelector("#gameDiv")
+   gameDiv.replaceChild(busted, userDiv)
+  
+     removeButtons()
   }
