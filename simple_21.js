@@ -162,7 +162,23 @@ const displayCpuCards = (cardData) => {
      let cpuDiv = document.querySelector("#cpuDeck")
      cpuDiv.append(card)
  })
+  updateCpuScore(cpuScore)
+}
 
+
+const updateCpuScore = (scoreArr) => {
+    cpuSum = 0
+    for (let i = 0; i < scoreArr.length; i++) {
+      if (scoreArr[i] === "JACK" || scoreArr[i] === "QUEEN" || scoreArr[i] === "KING"){
+         cpuSum += 10
+      } else if (scoreArr[i] === "ACE") {
+         cpuSum += 1
+      } else {
+       cpuSum += parseInt(scoreArr[i])
+      }
+    }
+
+    removeButtons()
 }
 
 
