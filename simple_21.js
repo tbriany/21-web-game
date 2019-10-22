@@ -66,9 +66,7 @@ const drawCards = async (deck_id, num) => {
     let footer = document.querySelector("#footer")
     footer.append(hitBtn, stayBtn)
 
-    hitBtn.addEventListener('click', () => {
-        console.log('Hit button was clicked')
-    })
+    hitBtn.addEventListener('click', hit)
     stayBtn.addEventListener('click', () => {
         console.log('Stay button was clicked')
     })
@@ -124,3 +122,7 @@ const updateUserScore = (scoreArr) => {
   
      removeButtons()
   }
+
+  const hit = () => {
+    drawCards(deck_id, 1)
+   }
