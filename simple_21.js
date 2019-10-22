@@ -177,9 +177,18 @@ const updateCpuScore = (scoreArr) => {
        cpuSum += parseInt(scoreArr[i])
       }
     }
+    checkCpuScore()
     displayCpuScore()
     removeButtons()
 }
+
+const checkCpuScore = (sum) => {
+    if (sum > 21) {
+      displayYouWon()
+    } else {
+      console.log('compare computer and user score')
+    }
+  }
 
 const displayCpuScore = (sum) => {
     let score = document.querySelector("#cpuScore")
