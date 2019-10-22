@@ -89,7 +89,7 @@ const updateUserScore = (scoreArr) => {
    const checkUserScore = (sum) => {
     displayUserScore(userSum)
     if (sum === 21) {
-      console.log("User won")
+      displayYouWon()
       removeButtons()
     } else if (sum > 21) {
      console.log("User lost")
@@ -111,6 +111,7 @@ const updateUserScore = (scoreArr) => {
     footer.removeChild(stayBtn)
   }
 
+
   const displayBusted = () => {
     let userDiv = document.querySelector("#userDeck")
   
@@ -123,6 +124,18 @@ const updateUserScore = (scoreArr) => {
      removeButtons()
   }
 
-  const hit = () => {
+
+const hit = () => {
     drawCards(deck_id, 1)
    }
+
+
+const displayYouWon = () => {
+
+    let header = document.querySelector("#header")
+  
+    let youWonText = document.createElement('h1')
+    youWonText.innerText = 'YOU WIN!'
+  
+    header.append(youWonText)
+  }
