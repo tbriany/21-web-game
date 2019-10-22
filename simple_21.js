@@ -25,6 +25,28 @@ const drawCards = async (deck_id, num) => {
     let btn = document.querySelector("#startBtn")
     let gameDiv = document.querySelector("#gameDiv")
     gameDiv.removeChild(btn)
+
+    addBtns()
   }
 
-  
+  const addBtns = () => {
+    let hitBtn = document.createElement('button')
+    hitBtn.id = "hitBtn"
+    hitBtn.innerText = "HIT"
+
+    let stayBtn = document.createElement('button')
+    stayBtn.id = "stayBtn"
+    stayBtn.innerText = "Stay"
+
+    let footer = document.querySelector("#footer")
+    footer.append(hitBtn, stayBtn)
+
+    hitBtn.addEventListener('click', () => {
+        console.log('Hit button was clicked')
+    })
+    stayBtn.addEventListener('click', () => {
+        console.log('Stay button was clicked')
+    })
+}
+
+
