@@ -92,6 +92,7 @@ const updateUserScore = (scoreArr) => {
     displayUserScore(userSum)
     if (sum === 21) {
       console.log("User won")
+      removeButtons()
     } else if (sum > 21) {
      console.log("User lost")
     }
@@ -102,3 +103,11 @@ const updateUserScore = (scoreArr) => {
     score.innerText = sum 
   }
 
+  const removeButtons = () => {
+    let footer = document.querySelector("#footer")
+    let hitBtn = document.querySelector("#hitBtn")
+    let stayBtn = document.querySelector("#stayBtn")
+  
+    footer.removeChild(hitBtn)
+    footer.removeChild(stayBtn)
+  }
