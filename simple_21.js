@@ -186,7 +186,7 @@ const checkCpuScore = (sum) => {
     if (sum > 21) {
       displayYouWon()
     } else {
-      console.log('compare computer and user score')
+      compareScores(userSum, cpuSum)
     }
   }
 
@@ -194,6 +194,16 @@ const displayCpuScore = (sum) => {
     let score = document.querySelector("#cpuScore")
     score.innerText = sum 
 }
+
+const compareScores = (sum1, sum2) => {
+    let userdiff = 21 - sum1 
+    let cpudiff = 21 - sum2 
+    if (userdiff < cpudiff){
+      displayYouWon()
+    } else {
+      console.log('computer won!')
+    }
+ }
   
 
 
