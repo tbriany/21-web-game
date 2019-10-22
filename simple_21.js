@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     startGame()
    })
    
-   const startGame = () => {
+const startGame = () => {
        let btn = document.querySelector("#startBtn")
        btn.addEventListener('click', getNewDeck)
-   }
+}
 
-   const getNewDeck = async () => {
+const getNewDeck = async () => {
     let url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
     let response = await axios.get(url)
     deck_id = response.data.deck_id 
@@ -20,11 +20,11 @@ const drawCards = async (deck_id, num) => {
     let response = await axios.get(url)
     let cardData = response.data.cards 
     displayUserCards(cardData)
-  }
+}
 
   userScore = []
 
-  const displayUserCards = (cardData) => {
+const displayUserCards = (cardData) => {
 
     cardData.forEach(el => {
         let img = el.image
@@ -52,7 +52,7 @@ const removeStartBtn = () => {
     gameDiv.removeChild(btn)
 
     addBtns()
-  }
+}
 
 const addBtns = () => {
     let hitBtn = document.createElement('button')
@@ -72,7 +72,7 @@ const addBtns = () => {
 
 const hit = () => {
     drawCards(deck_id, 1)
-   }
+}
 
 const updateUserScore = (scoreArr) => {
     userSum = 0
@@ -86,35 +86,34 @@ const updateUserScore = (scoreArr) => {
        }
      }
      checkUserScore(userSum)
-   }
+}
 
-   const checkUserScore = (sum) => {
+const checkUserScore = (sum) => {
     displayUserScore(userSum)
     if (sum === 21) {
       displayYouWon()
       removeButtons()
     } else if (sum > 21) {
-     console.log("User lost")
      displayBusted()
     }
-  }
+}
 
 const displayUserScore = (sum) => {
     let score = document.querySelector("#userScore")
     score.innerText = sum 
-  }
+}
 
-  const removeButtons = () => {
+const removeButtons = () => {
     let footer = document.querySelector("#footer")
     let hitBtn = document.querySelector("#hitBtn")
     let stayBtn = document.querySelector("#stayBtn")
   
     footer.removeChild(hitBtn)
     footer.removeChild(stayBtn)
-  }
+}
 
 
-  const displayBusted = () => {
+const displayBusted = () => {
     let userDiv = document.querySelector("#userDeck")
   
     let busted = document.createElement('h2')
@@ -124,7 +123,7 @@ const displayUserScore = (sum) => {
    gameDiv.replaceChild(busted, userDiv)
   
      removeButtons()
-  }
+}
 
 const displayYouWon = () => {
 
@@ -134,11 +133,36 @@ const displayYouWon = () => {
     youWonText.innerText = 'YOU WIN!'
   
     header.append(youWonText)
-  }
+}
 
 
 const stay = () => {
     drawCards(deck_id, 3)
-  }
+}
+
+
+cpuScore = []
+
+
+const displayCpuCards = (cardData) => {
+    cardData.forEach(el => {
+      let img = el.image
+      let value = el.value
+  
+      cpuScore.push(value)
+  
+      card = document.createElement("img")
+      card.className = "card";
+  
+      
+     card.src = img
+     card.setAttribute('width', '201px')
+     card.setAttribute('height', '294px')
+  
+     let cpuDiv = document.querySelector("#cpuDeck")
+     cpuDiv.append(card)
+ })
+
+}
 
 
