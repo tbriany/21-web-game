@@ -85,11 +85,20 @@ const updateUserScore = (scoreArr) => {
         userSum += parseInt(scoreArr[i])
        }
      }
-     console.log(userSum)
-     displayUserScore()
+     checkUserScore(userSum)
    }
+
+   const checkUserScore = (sum) => {
+    displayUserScore(userSum)
+    if (sum === 21) {
+      console.log("User won")
+    } else if (sum > 21) {
+     console.log("User lost")
+    }
+  }
 
    const displayUserScore = (sum) => {
     let score = document.querySelector("#userScore")
     score.innerText = sum 
   }
+
