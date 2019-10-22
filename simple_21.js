@@ -43,7 +43,7 @@ const drawCards = async (deck_id, num) => {
        let userDiv = document.querySelector("#userDeck")
        userDiv.append(card)
     })
-
+     updateUserScore(userScore)
 }
 
   const removeStartBtn = () => {
@@ -74,4 +74,18 @@ const drawCards = async (deck_id, num) => {
     })
 }
 
+const updateUserScore = (scoreArr) => {
+    userSum = 0
+     for (let i = 0; i < scoreArr.length; i++) {
+       if (scoreArr[i] === "JACK" || scoreArr[i] === "QUEEN" || scoreArr[i] === "KING"){
+          userSum += 10
+       } else if (scoreArr[i] === "ACE") {
+          userSum += 1
+       } else {
+        userSum += parseInt(scoreArr[i])
+       }
+     }
+     console.log(userSum)
+   }
 
+    
