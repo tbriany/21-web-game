@@ -86,6 +86,10 @@ const updateUserScore = (scoreArr) => {
        }
      }
      console.log(userSum)
+     displayUserScore()
    }
 
-    
+   const displayUserScore = (sum) => {
+    let score = document.querySelector("#userScore")
+    score.innerText = sum 
+  }
