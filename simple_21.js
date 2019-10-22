@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let response = await axios.get(url)
     deck_id = response.data.deck_id 
     drawCards(deck_id, 2)
+    removeStartBtn()
 }
 
 const drawCards = async (deck_id, num) => {
@@ -19,3 +20,11 @@ const drawCards = async (deck_id, num) => {
     let response = await axios.get(url)
     let cardData = response.data.cards 
   }
+
+  const removeStartBtn = () => {
+    let btn = document.querySelector("#startBtn")
+    let gameDiv = document.querySelector("#gameDiv")
+    gameDiv.removeChild(btn)
+  }
+
+  
