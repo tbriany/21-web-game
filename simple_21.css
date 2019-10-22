@@ -10,3 +10,8 @@ h1 {
     color: white; 
    margin-bottom: 75px;
 }
+
+#startBtn {
+    background-color: green;
+    margin: 0 auto;
+}
