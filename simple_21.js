@@ -46,7 +46,7 @@ const drawCards = async (deck_id, num) => {
      updateUserScore(userScore)
 }
 
-  const removeStartBtn = () => {
+const removeStartBtn = () => {
     let btn = document.querySelector("#startBtn")
     let gameDiv = document.querySelector("#gameDiv")
     gameDiv.removeChild(btn)
@@ -54,7 +54,7 @@ const drawCards = async (deck_id, num) => {
     addBtns()
   }
 
-  const addBtns = () => {
+const addBtns = () => {
     let hitBtn = document.createElement('button')
     hitBtn.id = "hitBtn"
     hitBtn.innerText = "HIT"
@@ -67,10 +67,12 @@ const drawCards = async (deck_id, num) => {
     footer.append(hitBtn, stayBtn)
 
     hitBtn.addEventListener('click', hit)
-    stayBtn.addEventListener('click', () => {
-        console.log('Stay button was clicked')
-    })
+    stayBtn.addEventListener('click', stay)
 }
+
+const hit = () => {
+    drawCards(deck_id, 1)
+   }
 
 const updateUserScore = (scoreArr) => {
     userSum = 0
@@ -97,7 +99,7 @@ const updateUserScore = (scoreArr) => {
     }
   }
 
-   const displayUserScore = (sum) => {
+const displayUserScore = (sum) => {
     let score = document.querySelector("#userScore")
     score.innerText = sum 
   }
@@ -124,12 +126,6 @@ const updateUserScore = (scoreArr) => {
      removeButtons()
   }
 
-
-const hit = () => {
-    drawCards(deck_id, 1)
-   }
-
-
 const displayYouWon = () => {
 
     let header = document.querySelector("#header")
@@ -139,3 +135,10 @@ const displayYouWon = () => {
   
     header.append(youWonText)
   }
+
+
+const stay = () => {
+    drawCards(deck_id, 3)
+  }
+
+
