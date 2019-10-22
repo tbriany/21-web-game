@@ -34,4 +34,16 @@ h1 {
     height: 25px;
     border-radius: 10px;
 }
+
+#footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
  
