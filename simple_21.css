@@ -28,3 +28,10 @@ h1 {
 #cpuDeck h2 {
     float: right;
 }
+
+#startBtn, #hitBtn, #stayBtn {
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+}
+ 
