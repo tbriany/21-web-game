@@ -19,7 +19,32 @@ const drawCards = async (deck_id, num) => {
     let url = `https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=${num}`
     let response = await axios.get(url)
     let cardData = response.data.cards 
+    displayUserCards(cardData)
   }
+
+  userScore = []
+
+  const displayUserCards = (cardData) => {
+
+    cardData.forEach(el => {
+        let img = el.image
+        let value = el.value
+
+        userScore.push(value)
+
+        card = document.createElement("img")
+        card.className = "card";
+
+        
+       card.src = img 
+       card.setAttribute('width', '201px')
+       card.setAttribute('height', '294px')
+
+       let userDiv = document.querySelector("#userDeck")
+       userDiv.append(card)
+    })
+
+}
 
   const removeStartBtn = () => {
     let btn = document.querySelector("#startBtn")
