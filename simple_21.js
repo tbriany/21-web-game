@@ -183,7 +183,7 @@ const updateCpuScore = (scoreArr) => {
       }
     }
     checkCpuScore()
-    displayCpuScore()
+    displayCpuScore(cpuScore)
     removeButtons()
  }
 
