@@ -19,8 +19,13 @@ const drawCards = async (deck_id, num) => {
     let url = `https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=${num}`
     let response = await axios.get(url)
     let cardData = response.data.cards 
-    displayUserCards(cardData)
-}
+
+    if (num === 1 || num === 2) {
+     displayUserCards(cardData)
+    } else if (num === 3) {
+    displayCpuCards(cardData)
+     }
+ }
 
   userScore = []
 
