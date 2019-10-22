@@ -177,8 +177,14 @@ const updateCpuScore = (scoreArr) => {
        cpuSum += parseInt(scoreArr[i])
       }
     }
-
+    displayCpuScore()
     removeButtons()
 }
+
+const displayCpuScore = (sum) => {
+    let score = document.querySelector("#cpuScore")
+    score.innerText = sum 
+}
+  
 
 
