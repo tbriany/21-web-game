@@ -1,3 +1,8 @@
+cat << EOF >> ~/.bash_profile
+# Add Visual Studio Code (code)
+export PATH=$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+EOF
+
 # Simple 21 - Cards Web Game
 
 ## The Game
